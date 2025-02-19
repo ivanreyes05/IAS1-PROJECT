@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAS1 PROJCET</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+    <div class="encoded-messages">
+        <h3>Enter A Code Number to Unlock for Each Message</h3>
+
+        <div class="message-container">
+            <input type="text" class="code-input" id="code1" placeholder="">
+            <a href="#" onclick="revealMessage('code1', 'ORTIDOFFROUTUUREFLSE', 'DO IT FOR YOURSELF')">ORTIDOFFROUTUUREFLSE</a>
+        </div>
+        <div class="output" id="output1"></div>
+        <div class="message-container">
+            <input type="text" class="code-input" id="code2" placeholder="">
+            <a href="#" onclick="revealMessage('code2', 'REAYKAOOOTUNDBIEAS', 'BOUNDARIES ARE OKAY TOO')">REAYKAOOOTUNDBIEAS</a>
+        </div>
+        <div class="output" id="output2"></div>
+        <div class="message-container">
+            <input type="text" class="code-input" id="code3" placeholder="">
+            <a href="#" onclick="revealMessage('code3', 'DREEYSJNNOAVESITBS', 'JOVANNE D REYES BSIT')">DREEYSJNNOAVESITBS</a>
+        </div>
+        <div class="output" id="output3"></div>
+
+    </div>
+
+    <script>
+        function copyMessage(encryptedText) {
+            navigator.clipboard.writeText(encryptedText).then(() => {
+                alert("Encrypted message copied!");
+            }).catch(() => {
+                alert("");
+            });
+        }
+
+        function revealMessage(inputId, encryptedText, originalMessage) {
+            let userCode = document.getElementById(inputId).value.trim();
+            let outputDiv = document.getElementById("output" + inputId.charAt(inputId.length - 1));
+
+            // Example of codes that match each message
+            const validCodes = {
+                "ORTIDOFFROUTUUREFLSE": "123",
+                "REAYKAOOOTUNDBIEAS": "567",
+                "DREEYSJNNOAVESITBS": "8910"
+            };
+
+            if (validCodes[encryptedText] === userCode) {
+                outputDiv.innerHTML = `<strong>Original Message:</strong> ${originalMessage}`;
+            } else {
+                outputDiv.innerHTML = `<span style="color:red;">Incorrect Code! Try again.</span>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

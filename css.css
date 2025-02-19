@@ -1,0 +1,63 @@
+
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #b0d2b4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .encoded-messages {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(34, 14, 14, 0.1);
+            width: 60%;
+            margin: auto;
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .encoded-messages a {
+            flex: 2;
+            padding: 10px;
+            text-align: center;
+            background: #4f4368;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .encoded-messages a:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .code-input {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #030202;
+            text-align: center;
+            width: 80px;
+        }
+
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        
